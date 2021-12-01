@@ -1,0 +1,23 @@
+{
+  "name": "myfisrtbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.54.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladFo01/romanticBot.git"
+  },
+  "author": "Vlad Foroshcha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladFo01/romanticBot/issues"
+  },
+  "homepage": "https://github.com/VladFo01/romanticBot#readme"
+}

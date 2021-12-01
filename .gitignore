@@ -1,0 +1,4 @@
+# ignore users.json
+dataBase/users.json
+#ignore node_modules
+node_modules/*
