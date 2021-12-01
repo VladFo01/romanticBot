@@ -14,7 +14,7 @@ const testId = 600494175;
 
 const complimentUrl = {
     boy: './dataBase/boys.json',
-    girl: './dataBase/data.json',
+    girl: './dataBase/girls.json',
 };
 
 //Команды
@@ -201,9 +201,9 @@ bot.on('callback_query', async msg => {
 
 // генерация рандомного комплимента
 const getCompliment = sex => {
-    // if (!sex) {
-        sex = 'boy';
-    // }
+    if (!sex) {
+        sex = 'girl';
+    }
     const url = complimentUrl[sex];
     const arrLength = complimentUrl[sex].length;
 

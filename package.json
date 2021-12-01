@@ -4,7 +4,10 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
-    "node-telegram-bot-api": "^0.54.0"
+    "cheerio": "^1.0.0-rc.10",
+    "needle": "^3.0.0",
+    "node-telegram-bot-api": "^0.54.0",
+    "tress": "^1.1.4"
   },
   "devDependencies": {},
   "scripts": {
