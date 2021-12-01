@@ -1,0 +1,24 @@
+{
+  "name": "myFisrtBot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "nodemon main.js",
+    "start": "node main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "fs": "0.0.1-security",
+    "needle": "^3.0.0",
+    "node-fetch": "^3.0.0",
+    "node-telegram-bot-api": "^0.54.0",
+    "nodemon": "^2.0.12",
+    "reloadjs": "0.0.2",
+    "tress": "^1.1.4",
+    "url": "^0.11.0"
+  }
+}
