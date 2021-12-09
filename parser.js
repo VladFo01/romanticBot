@@ -1,7 +1,7 @@
 const needle = require("needle");
 const tress = require('tress');
 const cheerio = require('cheerio');
-const resolve = require('url').resolve;
+// const resolve = require('url').resolve;
 const fs = require('fs');
 
 const URL = 'http://happybirthday.co.ua/komplimenti-hloptsevi-svoyimi-slovami-v-prozi-ukrayinskoyu-movoyu/';
