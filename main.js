@@ -183,7 +183,7 @@ bot.on('callback_query', async msg => {
     if (data === 'girl' || data === 'boy') {
         user.sex = data;
 
-        await writeUsers();
+        writeUsers();
 
         await bot.sendMessage(chatId, 'Чудово! Тепер обери, як часто ти хочеш отримувати компліменти:', timerOptions);
 
@@ -205,16 +205,17 @@ const getCompliment = sex => {
         sex = 'girl';
     }
     const url = complimentUrl[sex];
-    const arrLength = complimentUrl[sex].length;
 
     const textArray = JSON.parse(fs.readFileSync(url, 'utf-8'));
+
+    const arrLength = textArray.length;
 
     const index = Math.floor(Math.random() * arrLength);
 
     return textArray[index];
 }
 
-const getSticker = id => {
+const getSticker = () => {
     const stickers = JSON.parse(fs.readFileSync('./dataBase/stickers.json', 'utf-8'));
     const stickersAmount = stickers.length;
 
