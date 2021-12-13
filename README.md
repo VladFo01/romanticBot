@@ -14,6 +14,12 @@ It has 7 commands:
 
 ## Documentation
 
+#### Getting started
+
+To start the bot run "main.js" file with command:
+```
+node main.js
+```
 #### Constants
 
 **users** - an array with Objects of users;
