@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "myFisrtBot",
   "version": "1.0.0",
   "description": "",
@@ -21,4 +22,30 @@
     "tress": "^1.1.4",
     "url": "^0.11.0"
   }
+=======
+  "name": "myfisrtbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "needle": "^3.0.0",
+    "node-telegram-bot-api": "^0.54.0",
+    "tress": "^1.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladFo01/romanticBot.git"
+  },
+  "author": "Vlad Foroshcha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladFo01/romanticBot/issues"
+  },
+  "homepage": "https://github.com/VladFo01/romanticBot#readme"
+>>>>>>> 5d2589047d3b0096c03f223c61ff050e05508127
 }

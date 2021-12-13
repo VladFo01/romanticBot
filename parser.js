@@ -1,45 +1,32 @@
-// Записуємо посилання на першу сторінку сайту, який нам потрібно парсить
-const URL = 'http://vitannya.com/komplimenti-hloptsevi-v-prozi-svoyimi-slovami-ukrayinskoyu-movoyu/';
-
-// Ініціалізуємо константи 
+const needle = require("needle");
 const tress = require('tress');
-const needle = require('needle');
 const cheerio = require('cheerio');
-const resolve = require('url').resolve;
+// const resolve = require('url').resolve;
 const fs = require('fs');
 
-// Створюємо масив для запису результатів парсингу
-const results = [];
+const URL = 'http://happybirthday.co.ua/komplimenti-hloptsevi-svoyimi-slovami-v-prozi-ukrayinskoyu-movoyu/';
+const prevResults = JSON.parse(fs.readFileSync('./dataBase/girls.json', 'utf-8'));
+const results = [...prevResults];
 
-// Створюємо чергу
-const queue = tress((URL, callback) => {
-    needle.get(URL, (err, res) => {
+const q = tress(function (url, callback) {
+    needle.get(url, function (err, res) {
         if (err) throw err;
 
-        // Парсимо DOM
         const $ = cheerio.load(res.body);
 
-        $('.gerf > p').each(function () {
-            // $(this).text();
-            if (!($(this).text().includes('<'))) {
-                results.push(
-                    $(this).text().trim()
-                );
-            }
-        });
+        const content = $('.entry-content > p').contents().text().trim().split("\n");
+        content.forEach(text => results.push(text));
 
-        // Наступні сторінки
-        $('page-numbers').each(function () {
-            queue.push($(this).attr('href'));
-        });
-
+        // $('ul.related_posts > li > a').each(() => {
+        //     q.push(resolve(URL, $(this).attr('href')));
+        // });
+        
         callback();
     });
 }, 6);
 
-// створюємо функцію, яка виконається після завершення черги
-queue.drain = () => {
-    fs.writeFileSync('./dataBase/boys1.json', JSON.stringify(results, null, 4));
+q.drain = () => {
+    fs.writeFileSync('./dataBase/girls.json', JSON.stringify(results, null, 4));
 }
 
-queue.push(URL);
+q.push(URL);
